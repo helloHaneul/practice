@@ -24,6 +24,8 @@ app.post('/register', (req, res) => {
   // client로부터 가입정보를 받아 데이터베이스에 저장
   const user = new User(req.body)
 
+  console.log("register request come");
+
   user.save((err, doc) => {
     if(err) return res.json({ success: false, err})
     return res.status(200).json({
